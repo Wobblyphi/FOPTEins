@@ -21,6 +21,8 @@ public class ControlOfTrafficLight extends Thread
     public void run()
     {
         ControlOfTrafficLight control = new ControlOfTrafficLight(trafficLight);
+        synchronized(control)
+        {
         while(true)
         {
             trafficLight.schalteRot();
@@ -40,5 +42,6 @@ public class ControlOfTrafficLight extends Thread
             {
             }    
         }  
+        }
     }
 }
